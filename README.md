@@ -28,3 +28,7 @@
 ####		loop that let the shell continue runing (work in progress...)
 ###	exctract_dir_from_string.c:
 ####	check if a dir exist in the string and exctracte it
+###	check_char
+####		counts the number of small letters in a string, if there are none, returns 0. Used in split_string
+###	split_string
+####		splits a string with ' ' delimiters into an array of strings

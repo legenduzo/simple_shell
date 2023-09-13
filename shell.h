@@ -21,5 +21,7 @@ size_t spchk(char *str);
 char *isdir(char *str);
 int dirr(char *str);
 void remove_space_and_newline(char *str);
+int check_char(char *str);
+char **split_string(char *str);
 
 #endif
