@@ -17,7 +17,7 @@ void cmd_manage(char *buffer)
 	}
 	_strcpy(file_path, "/bin/");
 	
-	/**tokinizerr function to split the user input*/
+	/**still working on tokinizerr function to split the user input*/
 
 	pid = fork();
 	rmvSNl(buffer);
