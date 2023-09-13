@@ -23,5 +23,6 @@ void shell_loop(void)
 			_envvar();
 			continue;
 		}
+		cmd_manage(buffer);
 	}
 }

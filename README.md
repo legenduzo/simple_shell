@@ -11,7 +11,7 @@
 ###	shell.h
 ####		function prototype and headers
 ####	main.c
-###		main entry to the shell
+###		main entry to the shell (work in progress...)
 ###	check_spaces.c: 
 ####		spchk - count spaces in a string
 ###	check_dir.c :
@@ -25,6 +25,6 @@
 ###	remove_dir_bin_from_string.c:
 ####		function that search for /bin/ and removes it from the given string
 ###	loop_shell.c:
-####		loop that let the shell continue runing
+####		loop that let the shell continue runing (work in progress...)
 ###	exctract_dir_from_string.c:
 ####	check if a dir exist in the string and exctracte it
