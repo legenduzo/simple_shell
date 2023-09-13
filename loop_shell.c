@@ -14,7 +14,7 @@ void shell_loop(void)
 	while (1)
 	{
 		if (!fgets(buffer, BUFFER_SIZE, stdin)
-				|| !_strncmp(buffer, "exit", 4) || spchk(buffer) == _strlen(buffer))
+				|| !_strncmp(buffer, "exit", 4) || spacescheck(buffer) == _strlen(buffer))
 		{
 			exit(0);
 		}

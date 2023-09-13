@@ -17,7 +17,7 @@ extern char **environ;
 
 void _envvar(void);
 void rm_bin(char *str);
-size_t spchk(char *str);
+size_t spacescheck(char *str);
 char *isdir(char *str);
 int dirr(char *str);
 void remove_space_and_newline(char *str);

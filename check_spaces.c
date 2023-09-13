@@ -6,7 +6,7 @@
 *Return: 0 for not space or non-zero for space
 */
 
-size_t spchk(char *str)
+size_t spaceschk(char *str)
 {
 	int i = 0, sp = 0;
 
