@@ -9,7 +9,6 @@
 void shell_loop(void)
 {
 	char buffer[BUFFER_SIZE];
-	char *line = NULL;
 
 	while (1)
 	{
@@ -23,6 +22,7 @@ void shell_loop(void)
 			_envvar();
 			continue;
 		}
-		cmd_manage(buffer);
+		if (cmd_manage(buffer) == -1)
+			continue;
 	}
 }

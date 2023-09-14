@@ -1,12 +1,12 @@
 #include "shell.h"
 
 /**
-*spchk - count spaces in a string
+*spacescheck - count spaces in a string
 *@str: string
 *Return: 0 for not space or non-zero for space
 */
 
-size_t spaceschk(char *str)
+size_t spacescheck(char *str)
 {
 	int i = 0, sp = 0;
 
