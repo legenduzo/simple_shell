@@ -5,8 +5,10 @@
 *Return: always 0 (success)
 */
 
-int main(void)
+int main(int argc, char **argv, char **envp)
 {
-	shell_loop();
+	(void) argc;
+	(void) argv;
+	shell_loop(envp);
 	return (0);
 }

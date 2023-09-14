@@ -6,7 +6,7 @@
 *Return: 0 on sucess or -1 on fail
 */
 
-int cmd_manage(char *buffer)
+int cmd_manage(char *buffer, char *envp[])
 {
 	pid_t pid;
 	int status = 0;
@@ -28,7 +28,7 @@ int cmd_manage(char *buffer)
 	{
 		if (!args && !args2)
 		{ argv[0] = buffer, argv[1] = NULL, strcat(file_path, buffer);
-			if (execve(file_path, argv, NULL) == -1)
+			if (execve(file_path, argv, envp) == -1)
 				perror("command not found"), exit(0); }
 		else if (dirr(args2) == 0)
 		{ argv[0] = file_path, argv[1] = args, argv[2] = args2, argv[3] = NULL;

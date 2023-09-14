@@ -27,7 +27,7 @@ int _strncmp(const char *str1, const char *str2, int n);
 size_t _strlen(const char *str);
 char *_strcpy(char *dest, const char *src);
 char *_strcat(char *dest, char *src);
-void shell_loop(void);
-int cmd_manage(char *buffer);
+void shell_loop(char *envp[]);
+int cmd_manage(char *buffer, char *envp[]);
 
 #endif
