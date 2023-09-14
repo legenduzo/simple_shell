@@ -3,6 +3,7 @@
 /**
 *cmd_manage - handle user inputeand execute commandes
 *@buffer: input from user
+*@envp: envirement pointer
 *Return: 0 on sucess or -1 on fail
 */
 

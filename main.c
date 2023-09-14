@@ -2,6 +2,9 @@
 
 /**
 *main - Entry point to the shell
+*@argc: argument count in the argv
+*@argv: array of pointers to the arguments
+*@envp: envirement pointer
 *Return: always 0 (success)
 */
 
