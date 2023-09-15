@@ -13,7 +13,7 @@ int check_char(char *str)
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (str[i] + 0 >= 'a' && str[i] + 0 <= 'z')
+		if (str[i] >= 'a' && str[i] <= 'z')
 			n++;
 	}
 	return (n);
