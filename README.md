@@ -17,9 +17,9 @@
 ###	check_dir.c :
 ####		check if the given string is a dir
 ###	commande_manage.c :
-####		handle and execute the commandes (work in progress...)
+####		handle and execute the commands (work in progress...)
 ###	remove_spaces_and_new_lines.c :
-####		function to remove space or new line from a sting
+####		function to remove space or new line from a string
 ###	string_manage.c:
 ####		contain 4 function : strcpy + strcat + strlen + strncmp
 ###	remove_dir_bin_from_string.c:
@@ -27,7 +27,7 @@
 ###	loop_shell.c:
 ####		loop that let the shell continue runing (work in progress...)
 ###	exctract_dir_from_string.c:
-####	check if a dir exist in the string and exctracte it
+####	check if a dir exist in the string and exctracts it
 ###	check_char
 ####		counts the number of small letters in a string, if there are none, returns 0. Used in split_string
 ###	split_string

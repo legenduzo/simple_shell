@@ -81,8 +81,7 @@ char **strings(char *str, char **words)
 
 char **split_string(char *str)
 {
-	int i = 0;
-	int word_count = 0;
+	int i, word_count = 0;
 	char **words;
 
 	if (!str)
@@ -90,6 +89,13 @@ char **split_string(char *str)
 
 	if (check_char(str) == 0)
 		return (NULL);
+
+	for (i = 0; (size_t) i < _strlen(str); i++)
+	{
+		if (str[i] == '\n')
+			str[i] = ' ';
+	}
+	i = 0;
 
 	if (str[i] == ' ')
 		i++;

@@ -9,15 +9,21 @@
 void shell_loop(char *envp[])
 {
 	char buffer[BUFFER_SIZE];
+	char *read_line;
 
 	while (1)
 	{
-		if (!fgets(buffer, BUFFER_SIZE, stdin)
+		prompt();
+
+		read_line = fgets(buffer, BUFFER_SIZE, stdin);
+		if (!read_line
 				|| !_strncmp(buffer, "exit", 4) || spacescheck(buffer) == _strlen(buffer))
 		{
+			if (read_line == NULL)
+				write(1, "\n", 1);
 			exit(0);
 		}
-		if (!strncmp(buffer, "env", 3))
+		if (!_strncmp(buffer, "env", 3))
 		{
 			_envvar();
 			continue;
