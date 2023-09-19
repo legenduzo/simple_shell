@@ -20,7 +20,7 @@ size_t spacescheck(char *str);
 char *isdir(char *str);
 int dirr(char *str);
 int check_char(char *str);
-char **split_string(char *str);
+char **split_string(char *str, char delim);
 int _strncmp(const char *str1, const char *str2, int n);
 size_t _strlen(const char *str);
 char *_strcpy(char *dest, const char *src);

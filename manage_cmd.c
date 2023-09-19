@@ -14,7 +14,7 @@ int cmd_manage(char *buffer, char **envp)
 	char *file_path;
 	char **argv;
 
-	argv = split_string(buffer);
+	argv = split_string(buffer, ' ');
 	file_path = argv[0];
 
 	pid = fork();
