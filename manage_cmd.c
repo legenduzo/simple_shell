@@ -11,17 +11,24 @@ int cmd_manage(char *buffer, char **envp)
 {
 	pid_t pid;
 	int status, i = 0;
-	char *file_path;
 	char **argv;
 
 	argv = split_string(buffer, ' ');
-	file_path = argv[0];
+
+	if (!dirr(argv[0]))
+		argv[0] = where(argv[0]);
+
+	if (!argv[0])
+	{
+		perror("hsh");
+		exit(1);
+	}
 
 	pid = fork();
 
 	if (pid == 0)
 	{
-		execve(file_path, argv, envp);
+		execve(argv[0], argv, envp);
 		perror("command not found");
 		exit(1);
 	}

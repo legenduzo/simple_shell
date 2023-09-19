@@ -26,5 +26,6 @@ char *_strcpy(char *dest, const char *src);
 char *_strcat(char *dest, char *src);
 void shell_loop(char *envp[]);
 int cmd_manage(char *buffer, char *envp[]);
+char *where(char *cmd);
 
 #endif
