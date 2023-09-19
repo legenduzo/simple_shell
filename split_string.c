@@ -93,7 +93,7 @@ char **split_string(char *str, char delim)
 	for (i = 0; (size_t) i < _strlen(str); i++)
 	{
 		if (str[i] == '\n')
-			str[i] = ' ';
+			str[i] = delim;
 	}
 	i = 0;
 
