@@ -6,7 +6,7 @@
 *
 */
 
-void shell_loop(char *envp[])
+void shell_loop(char **envp)
 {
 	char buffer[BUFFER_SIZE];
 	char *read_line;
@@ -28,7 +28,7 @@ void shell_loop(char *envp[])
 
 		if (!_strncmp(buffer, "env", 3))
 		{
-			_envvar();
+			_envvar(envp);
 			continue;
 		}
 		if (cmd_manage(buffer, envp) == -1)

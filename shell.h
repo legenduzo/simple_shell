@@ -1,7 +1,6 @@
 #ifndef SHELL_H
 #define SHELL_H
 #define BUFFER_SIZE 1024
-extern char **environ;
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -15,7 +14,7 @@ extern char **environ;
 #include <errno.h>
 
 
-void _envvar(void);
+void _envvar(char **envp);
 size_t spacescheck(char *str);
 char *isdir(char *str);
 int dirr(char *str);
