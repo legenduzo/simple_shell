@@ -2,7 +2,7 @@
 
 /**
  * _envvar - environmental variable
- *
+ *@envp: **envp from main function
  */
 
 void _envvar(char **envp)
