@@ -5,6 +5,7 @@
  * @str: string to return
  * @i: number of char in the string
  * @start: index to start from
+ * @delim: the delimeter
  *
  * Return: Array of strings on success, NULL on failure
  */
@@ -32,6 +33,7 @@ char *get_string(char *str, int i, char delim, int start)
  * strings - returns a null terminated array of strings
  * @str: string to split up
  * @words: pointer to strings
+ * @delim: the delimeter
  *
  * Return: Array of strings or NULL;
  */
@@ -40,7 +42,6 @@ char **strings(char *str, char delim, char **words)
 {
 	int j = 0, i = 0;
 	int start = 0;
-	int n;
 
 	if (str[i] == delim)
 		i++;
@@ -49,16 +50,7 @@ char **strings(char *str, char delim, char **words)
 	{
 		if (str[i] == delim && str[i - 1] != delim)
 		{
-			while (str[start] == delim)
-				start += 1;
-
-			n = i - start;
-			words[j] = malloc(n + 1);
-			if (!words[j])
-				return (NULL);
-
-			strncpy(words[j], &str[start], n);
-			words[j][n] = '\0';
+			words[j] = get_string(str, i, delim, start);
 			j++;
 			start = i;
 		}
@@ -66,16 +58,7 @@ char **strings(char *str, char delim, char **words)
 	}
 	if (str[i] == '\0' && str[i - 1] != delim)
 	{
-		while (str[start] == delim)
-			start += 1;
-
-		n = i - start;
-		words[j] = malloc(n + 1);
-		if (!words[j])
-			return (NULL);
-
-		strncpy(words[j], &str[start], n);
-		words[j][n] = '\0';
+		words[j] = get_string(str, i, delim, start);
 		words[j + 1] = NULL;
 
 		return (words);
