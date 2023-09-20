@@ -14,7 +14,6 @@ int cmd_manage(char *buffer, char **envp)
 	char **argv;
 
 	argv = split_string(buffer, ' ');
-
 	if (!dirr(argv[0]))
 		argv[0] = where(argv[0]);
 
@@ -25,7 +24,6 @@ int cmd_manage(char *buffer, char **envp)
 	}
 
 	pid = fork();
-
 	if (pid == 0)
 	{
 		execve(argv[0], argv, envp);
@@ -34,13 +32,11 @@ int cmd_manage(char *buffer, char **envp)
 	}
 	else if (pid > 0)
 		wait(&status);
-
 	else
 	{
 		perror("error");
 		return (-1);
 	}
-
 	if (argv)
 	{
 		while (argv[i])
@@ -50,6 +46,4 @@ int cmd_manage(char *buffer, char **envp)
 		}
 		free(argv);
 	}
-
-	return (0);
-}
+	return (0); }
