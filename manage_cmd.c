@@ -14,6 +14,13 @@ int cmd_manage(char *buffer, char **envp)
 	char **argv;
 
 	argv = split_string(buffer, ' ');
+
+	if (!argv)
+	{
+		perror("hsh");
+		exit(1);
+	}
+
 	if (!dirr(argv[0]))
 		argv[0] = where(argv[0]);
 
@@ -27,14 +34,14 @@ int cmd_manage(char *buffer, char **envp)
 	if (pid == 0)
 	{
 		execve(argv[0], argv, envp);
-		perror("command not found");
-		exit(1);
+		perror("hsh");
+		exit(2);
 	}
 	else if (pid > 0)
 		wait(&status);
 	else
 	{
-		perror("error");
+		perror("hsh");
 		return (-1);
 	}
 	if (argv)
@@ -46,4 +53,5 @@ int cmd_manage(char *buffer, char **envp)
 		}
 		free(argv);
 	}
-	return (0); }
+	return (0);
+}

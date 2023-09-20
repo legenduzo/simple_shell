@@ -6,21 +6,19 @@
 * @str2: parameter 2
 * @n: the function compare the string till it reaaches n
 *
-* Return: 0 on success
+* Return: 1 on success, 0 on failure
 */
 
 int _strncmp(const char *str1, const char *str2, int n)
 {
-	int idx;
+	int i;
 
-	for (idx = 0; idx < n; idx++)
+	for (i = 0; i < n; i++)
 	{
-		if (str1[idx] != str2[idx])
-		{
-			return (str1[idx] - str2[idx]);
-		}
+		if (str1[i] != str2[i])
+			return (0);
 	}
-	return (0);
+	return (1);
 }
 
 /**
