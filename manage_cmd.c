@@ -3,6 +3,7 @@
 /**
  *print_error - to print an error and exit the program
  *@exit_code: the exit code
+ *@argument: arg
  */
 
 void print_error(int exit_code, char *argument)
