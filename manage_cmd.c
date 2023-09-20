@@ -26,9 +26,6 @@ char **helper_func(char **argv)
 	if (!dirr(argv[0]))
 		argv[0] = where(argv[0]);
 
-	if (!argv[0])
-		print_error(1, "hsh");
-
 	return (argv);
 }
 
@@ -44,9 +41,18 @@ int cmd_manage(char *buffer, char **envp)
 	pid_t pid;
 	int status;
 	char **argv;
+	char *cmd;
 
 	argv = split_string(buffer, ' ');
+	cmd = argv[0];
 	argv = helper_func(argv);
+
+	if (!argv[0])
+	{
+		fprintf(stderr, "hsh: 1: %s: not found\n", cmd);
+		return (1);
+	}
+
 	pid = fork();
 	if (pid == 0)
 	{
