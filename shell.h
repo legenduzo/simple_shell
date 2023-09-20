@@ -27,5 +27,6 @@ char *_strcat(char *dest, char *src);
 void shell_loop(char *envp[]);
 int cmd_manage(char *buffer, char *envp[]);
 char *where(char *cmd);
+void free_split(char **str);
 
 #endif
