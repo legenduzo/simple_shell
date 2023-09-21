@@ -34,7 +34,7 @@ void shell_loop(char **envp)
 			_envvar(envp);
 			continue;
 		}
-		if (cmd_manage(buffer, envp) == -1)
+		if (cmd_manage(buffer, envp) != -1)
 			continue;
 	}
 }
