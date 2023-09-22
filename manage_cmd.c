@@ -21,6 +21,7 @@ void print_error(int exit_code, char *argument)
 char **helper_func(char **argv)
 {
 	char *temp;
+
 	if (!argv)
 		print_error(1, "hsh");
 
