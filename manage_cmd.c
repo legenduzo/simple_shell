@@ -20,11 +20,19 @@ void print_error(int exit_code, char *argument)
 
 char **helper_func(char **argv)
 {
+	char *temp;
 	if (!argv)
 		print_error(1, "hsh");
 
 	if (!dirr(argv[0]))
-		argv[0] = where(argv[0]);
+	{
+		temp = malloc(strlen(argv[0]) + 1);
+		strcpy(temp, argv[0]);
+		free(argv[0]);
+		argv[0] = NULL;
+		argv[0] = where(temp);
+		free(temp);
+	}
 
 	return (argv);
 }
