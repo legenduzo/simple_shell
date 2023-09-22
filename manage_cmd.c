@@ -65,11 +65,18 @@ int cmd_manage(char *buffer, char **envp)
 	pid = fork();
 	if (pid == 0)
 	{
-		execve(argv[0], argv, envp);
-		print_error(2, argv[0]);
+		if (execve(argv[0], argv, envp) == -1)
+			print_error(126, argv[0]);
 	}
 	else if (pid > 0)
+	{
 		wait(&status);
+		if (WIFEXITED(status) != 0 && WEXITSTATUS(status) != 0)
+			fprintf(stderr, "hsh: 1: %s: not found\n", cmd);
+		else if (WIFSIGNALED(status) != 0)
+			print_error(WTERMSIG(status), cmd);
+	}
+
 	else
 		print_error(-1, argv[0]);
 
